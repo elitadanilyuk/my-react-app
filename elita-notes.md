@@ -41,3 +41,13 @@ This is the best method to render lists of items. You can use template literals 
 An object can be destructed by using `const { ... } = object;`. This will set multiple variables to properties of the object.
 
 You can also set aliases by doing `property: < alias name >` which will define the alias variable to the property of the object you are calling.
+
+### Spread Operator
+
+The spread `...` operator allows you to not only concat objects and arrays, but allows you to easily clone them and add to them. _Note: concat(), is rarely used now because of the spread operator._
+
+```
+const first1 = { name: 'Mosh' };
+const second2 = { job: 'Instructor' };
+const combinedObj = {...first1, ...second2, location: 'Australia'};
+```
