@@ -1,11 +1,19 @@
 // Refresher
 
 //
-// Array.map Method
+// Object Destructing
 
-// best method to render a list of items
+const address = {
+    street: '',
+    city: '',
+    country: ''
+};
 
-const colors = ['red', 'green', 'blue'];
-const items = colors.map(color => '<li>' + color + '</li>');
-// template literals - line bellow is equivalent
-const items2 = colors.map(color => `<li>${color}</li>`);
+// the following is repetative
+const street1 = address.street;
+const city1 = address.city;
+const country1 = address.country;
+
+// this line is equivalent to the three above
+const { street: st, city, country } = address;
+// street: st is defining st to the street property of the address object

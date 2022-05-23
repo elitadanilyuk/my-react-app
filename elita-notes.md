@@ -35,3 +35,9 @@ This is the best method to render lists of items. You can use template literals 
 - `const items = colors.map(color => '<li>' + color + '</li>');`
 - `const items2 = colors.map(color => '<li>${color}</li>');`
   - for the return string, be sure to use the back-tic (same key as '~')
+
+### Object Destructing
+
+An object can be destructed by using `const { ... } = object;`. This will set multiple variables to properties of the object.
+
+You can also set aliases by doing `property: < alias name >` which will define the alias variable to the property of the object you are calling.
