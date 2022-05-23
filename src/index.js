@@ -1,37 +1,43 @@
-// var -> function
-// let -> block scoped
-// const -> block scoped
+// Refresher
 
-// prefer const unless var needs to be changed, then use let
+//
+// Arrow Functions
 
-const person = {
-    name: 'Elita',
-    walk: function () {
-        // this is ref to current object (person)
-        console.log(this);
-    }, //method in person object
-    talk() {} // another way to use method notation
+const square = function(number) {
+    return number * number;
 }
 
-// use this notation if you know property or method to use
+const square1 = number =>  number * number;
+console.log(square(5));
+
+const jobs = [
+    { id: 1, isActive: true },
+    { id: 2, isActive: true },
+    { id: 3, isActive: false }
+];
+
+// function to get only the active jobs (returns t/f)
+jobs.filter(function(job) { return job.isActive; });
+// equivalent line below as an arrow function
+jobs.filter( job => job.isActive );
+
+//
+// Arrow Functions and 'this'
+
+const person = {
+    talk() {
+        console.log("this1", this)
+
+        setTimeout(function() {
+            console.log("this2", this)
+        }, 1000);
+
+        setTimeout( () => {
+            console.log("this3", this)
+            // arrow function inherit the person object
+            // arrow functions don't rebind the 'this' keyword
+        }, 2000);
+    }
+};
+
 person.talk();
-
-// use notation when unsure which property or var to access
-person['name'] = 'Dan';
-
-const targetMember = 'name';
-person[targetMember.value] = 'Dan';
-
-person.walk();
-
-const walk = person.walk;
-console.log(walk);
-
-// the this returns the global/window object
-// if strict mode is enabled it returns undefined
-walk();
-
-//every function in JS is an object
-// bind method is how to fix the 'strict mode'
-const walk1 = person.walk.bind(person);
-walk1();
