@@ -27,3 +27,11 @@ Use dot notation when you know the property or method to use (`person.talk()`). 
 - if function has one return line, don't need return keyword and you can put the entire function on one line (`const square = number => number * number;`)
 
 Arrow functions don't rebind the 'this' keyword.
+
+### Array.map method
+
+This is the best method to render lists of items. You can use template literals to make strings more readable. For example, the two lines are equivalent:
+
+- `const items = colors.map(color => '<li>' + color + '</li>');`
+- `const items2 = colors.map(color => '<li>${color}</li>');`
+  - for the return string, be sure to use the back-tic (same key as '~')
